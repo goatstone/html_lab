@@ -1,0 +1,53 @@
+application: lime-goatstone
+version: 11
+runtime: go
+api_version: go1
+
+handlers:
+
+- url: /image
+  static_dir: image
+
+- url: /css
+  static_dir: css
+  mime_type: text/css
+
+- url: /vendor
+  static_dir: vendor
+
+- url: /js
+  static_dir: js
+  mime_type: application/javascript
+
+- url: /login
+  static_files: login.html
+  upload: login.html
+
+- url: /templates
+  script: _go_app
+
+- url: /flex
+  static_files:  flex.html
+  upload:  flex.html
+
+- url: /anim
+  static_files: anim.html
+  upload: anim.html
+
+- url: /svg
+  static_files: svg.html
+  upload: svg.html
+
+- url: /ustream
+  static_files: ustream.html
+  upload: ustream.html
+
+- url: /css_anim
+  static_files: css_anim.html
+  upload: css_anim.html
+
+- url: /.*
+  static_files:  index.html
+  upload:  index.html
+#  login: required
+#  secure: always

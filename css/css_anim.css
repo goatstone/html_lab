@@ -1,0 +1,45 @@
+div {
+    background-color: red;
+    font-size: 40px;
+    width: 70px;
+
+    -webkit-animation-duration: 3s;
+    -webkit-animation-name: slidein;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-duration: 5s;
+    /*animation-delay:0.5s;*/
+    animation-play-state:running;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+
+    animation-name: slidein;
+}
+
+@keyframes slidein {
+    from {
+        top:1px;
+        margin-left: 70%;
+        width: 200px;
+        font-size: 19px;
+    }
+
+    to {
+        top:50px;
+        margin-left: 0%;
+        width: 70px;
+        font-size: 40px;
+    }
+}
+
+@-webkit-keyframes slidein {
+    from {
+        margin-left: 100%;
+        width: 300%;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+    }
+}
