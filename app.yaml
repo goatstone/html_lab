@@ -13,7 +13,7 @@ handlers:
   mime_type: text/css
 
 - url: /vendor
-  static_dir: vendor
+  static_dir: node_modules
 
 - url: /js
   static_dir: js
@@ -45,6 +45,10 @@ handlers:
 - url: /css_anim
   static_files: css_anim.html
   upload: css_anim.html
+
+- url: /snap
+  static_files: snap.html
+  upload: snap.html
 
 - url: /.*
   static_files:  index.html

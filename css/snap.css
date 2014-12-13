@@ -1,0 +1,18 @@
+body {
+    background: #00f;
+    font-family: sans-serif;
+}
+
+svg#moon {
+    display: block;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+svg tspan:nth-child(1) {
+    fill: red;
+}
