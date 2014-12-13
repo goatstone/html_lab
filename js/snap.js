@@ -1,7 +1,7 @@
 /* snap.js
 * */
 function Spinner() {
-    this.paper = Snap(300, 300);
+    this.paper = Snap(600, 600);
     this.path = "";
     // Element nums;
     this.nums = this.paper.text(30, 30, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]).attr({
@@ -12,7 +12,7 @@ function Spinner() {
     this.top = 100;
     this.left = 200;
     this.radius = 70
-    this.spinPoint = -60;   // degree point on circle
+    this.spinPoint = 360;   // degree point on circle
     this.draw();
 }
 Spinner.prototype.draw = function () {
@@ -20,7 +20,17 @@ Spinner.prototype.draw = function () {
     for (var i = 0; i < steps; i++) {
         this.nums.select("tspan:nth-child(" + (i + 1) + ")").attr({
             x: this.left + this.radius * Math.cos(Snap.rad(i / steps * 360 + this.spinPoint)),
-            y: this.top + this.radius * Math.sin(Snap.rad(i / steps * 360 + this.spinPoint))
+            y: this.top + this.radius * Math.sin(Snap.rad(i / steps * 360 + this.spinPoint)),
+            fill:function(){
+                var iTest = Math.floor( (this.spinPoint/30)  );
+                iTest = 12 - iTest;
+                return iTest === i+1?'red' : 'green';
+            }.call(this),
+            fontSize:function(){
+                var iTest = Math.floor( (this.spinPoint/30)  );
+                iTest = 12 - iTest;
+                return iTest === i+1? 44 : 16;
+            }.call(this)
         });
     }
 }
@@ -37,7 +47,7 @@ Spinner.prototype.roll = function () {
 };
 Spinner.prototype.spin = function () {
     var self = this;
-    Snap.animate(this.spinPoint, this.spinPoint + 360, function (val) {
+    Snap.animate(360, 0, function (val) {
         self.spinPoint = val;
         self.draw();
     }, self.animationDuration, function () {
@@ -50,7 +60,7 @@ window.onload = function () {
     s.spin();
 //        s.roll();
 
-    var paper = Snap(400, 300);
+    var paper = Snap(500, 300);
     var snapMatrix = new Snap.Matrix()
     snapMatrix.translate(100, 100);
     snapMatrix.rotate(20, 100, 100);

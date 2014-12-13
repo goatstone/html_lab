@@ -14,5 +14,5 @@ svg#moon {
 }
 
 svg tspan:nth-child(1) {
-    fill: red;
+    /*fill: red;*/
 }
