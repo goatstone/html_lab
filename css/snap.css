@@ -12,7 +12,18 @@ svg#moon {
     width: 100px;
     height: 100px;
 }
-
+svg#spinner{
+    border-radius: 20px;
+    background-color: azure;
+}
 svg tspan:nth-child(1) {
     /*fill: red;*/
+}
+
+svg.flame {
+    /*display: block;*/
+    position: absolute;
+    left: 50px;
+    top:50px;
+    background-color: red;
 }
