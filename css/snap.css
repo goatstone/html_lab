@@ -23,7 +23,8 @@ svg tspan:nth-child(1) {
 svg.flame {
     /*display: block;*/
     position: absolute;
-    left: 50px;
-    top:50px;
-    background-color: red;
+    left: 20%;
+    top:0px;
+    /*background-color: red;*/
+    display: none;
 }
