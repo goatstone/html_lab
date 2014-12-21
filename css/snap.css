@@ -1,5 +1,5 @@
 body {
-    background: #00f;
+    background: #222;
     font-family: sans-serif;
 }
 
@@ -21,7 +21,6 @@ svg tspan:nth-child(1) {
 }
 
 svg.flame {
-    /*display: block;*/
     position: absolute;
     left: 20%;
     top:0px;

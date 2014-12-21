@@ -50,6 +50,11 @@ handlers:
   static_files: snap.html
   upload: snap.html
 
+- url: /sample
+  static_files: sample.html
+  upload: sample.html
+
+
 - url: /.*
   static_files:  index.html
   upload:  index.html

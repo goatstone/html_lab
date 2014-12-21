@@ -1,4 +1,5 @@
 /* Flame.js
+Create a visual  of a flame with SVG
  * */
 function Flame(e, opacityTo, radiusTo, x, y, speed) {
     this.element = e;
@@ -39,10 +40,10 @@ window.onload = function () {
         .attr('fill', 'red')
         //.transform('t0,0');
 
-    var f = new Flame(flame, 0.5, 5, 70, 90, 700);
+    var f = new Flame(flame, 0.5, 5, 70, 90, 2000);
     f.engine();
-    var f2 = new Flame(flame2, 0.4, 5, 80, 85, 700);
+    var f2 = new Flame(flame2, 0.4, 5, 80, 85, 3000);
     f2.engine();
-    var f3 = new Flame(flame3, 0.4, 5, 75, 95, 700);
+    var f3 = new Flame(flame3, 0.4, 5, 75, 95, 4600);
     f3.engine();
 };
