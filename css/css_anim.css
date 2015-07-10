@@ -1,45 +1,58 @@
-div {
-    background-color: red;
-    font-size: 40px;
-    width: 70px;
-
-    -webkit-animation-duration: 3s;
-    -webkit-animation-name: slidein;
-    -webkit-animation-timing-function: ease-in-out;
-    animation-direction: alternate;
-    animation-duration: 5s;
-    /*animation-delay:0.5s;*/
-    animation-play-state:running;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-
-    animation-name: slidein;
+/* css_anim.css : Jose Collas : 7.2015 
+Demonstrate a series of CSS animations : 
+   tumbler, slow flasher, glower, color shifter, dropper,, bouncer, ufoer, clouder 
+*/
+html{
+    background-color: #ccc;
+    font-size: 46px;
 }
-
-@keyframes slidein {
-    from {
-        top:1px;
-        margin-left: 70%;
-        width: 200px;
-        font-size: 19px;
+div{
+    position: absolute;
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 9px 6px 7px rgba(20, 110, 200, .5);
+    border-radius: 50px;
+    padding: 32px 0 0 0 ;
+}
+div.spinner {
+    top:40%;
+    left: 40%;
+    width: 100px;
+    height: 100px;
+    fonnt-size:12px;
+    box-shadow: 19px 16px 27px rgba(20, 110, 200, .5);
+    color: orange;
+    background-color: #990;
+    animation: spinner 5s linear 0s infinite alternate both;
+}
+@keyframes spinner{
+    from{
+        transorm:rotateY(360deg);
+        z-index: 10;
     }
-
-    to {
-        top:50px;
-        margin-left: 0%;
-        width: 70px;
-        font-size: 40px;
+    to{
+        transform: rotateY(360deg);
+        z-index: 150;
     }
 }
-
-@-webkit-keyframes slidein {
+div.bouncer{
+    top:10px;
+    right: 10%;  
+    padding: 12px;
+    font-size: 20px;
+    color:greenyellow;
+    animation: bouncer 4s ease-in 3s infinite alternate none;
+    z-index: 100;
+}
+@keyframes bouncer {
     from {
-        margin-left: 100%;
-        width: 300%;
+        top:0%;
+        transform: scale(1);
+        background-color: rgba(10, 200, 255, 0.4);
     }
-
     to {
-        margin-left: 0%;
-        width: 100%;
+        top:85%;
+        transform: scale(2);
+        background-color: rgba(10, 200, 255, 0.9);
     }
 }
