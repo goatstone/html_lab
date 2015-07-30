@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML Lab</title>
+    <meta charset="utf-8" />     
+    <style>
+        html {
+            background-color: hsla(200, 30%, 20%, 1.0);
+            margin: 0;
+            padding: 0;
+            font-family: monospace            
+        }
+        section{
+            position: absolute;
+            width: 90%;
+            left: 5%;
+            top:1%;
+            height: 80%;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: space-between;
+            align-items: flex-end;
+            align-content: space-around;            
+            font-size: 1.2em;
+        }
+        section h1 {
+            color: hsla(40, 90%, 30%, 1);                        
+        }
+        section h3{
+            color: hsla(10, 10%, 30%, 1);                        
+            text-align: right;
+        }
+        section article{
+            border-radius: 7px;
+            padding: 22px;
+        }
+        section nav{
+            flex: 2 2 auto;
+            background-color: hsla( 170, 90%, 60%, 1.0) ;
+            box-shadow: 20px 20px 20px hsla(  250, 80%, 90%, 0.8 );
+            border-radius: 7px;
+            padding: 22px;
+            width: 100%;
+            margin-bottom: 23px;
+        }
+        section nav span{            
+            padding: 32px;            
+        }
+        section article{
+            flex: 1 3 auto;
+            background-color: hsla( 110, 40%, 60%, 1.0) ;
+            color: hsla(180, 10%, 30%, 1);            
+            box-shadow: 10px 10px 10px hsla( 250, 80%, 90%, 0.8 );
+            margin-top:16px;
+        }
+        section article:nth-child(1){
+            flex: 1 3 auto;
+        }
+        section article:nth-child(2){
+            flex: 1 3 auto;
+            background-color: hsla( 50, 70%, 60%, 1.0) ;
+        }
+        section article:nth-child(4){
+            flex: 1 3 auto;
+            background-color: hsla( 33, 70%, 60%, 1.0) ;
+        }
+        section a{
+            text-decoration: none;
+        }
+        section a:hover{
+            color: hsla( 3, 100%, 60%, 1.0) ;
+        }
+    </style>
+</head>
+<body>
+<section>
+    <nav>
+        <h1>HTML Lab</h1>    
+        HTML Lab is a place to demonstrate some of the features of HTML, CSS and SVG. Some of these examples will rely on JavaScript for functionality. All code can found on Github 
+        <a href="https://github.com/goatstone/html_lab" target="new">
+            https://github.com/goatstone/html_lab</a>.     
+         <span>
+        <a rel="author" href="http://goatstone.com" target="new">
+        Goatstone 2015
+        </a>
+        </span>    
+    </nav>
+    <article>
+         <a href="css_anim.html" target="new">CSS Animations</a>     :
+        Animations created with the 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes" target="new">@keyframes CSS at-rule</a>.
+    </article>
+    <article>
+         <a href="flex.html" target="new">Flexbox</a> :
+        A layout created with CSS 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Flexible_boxes" target="new">flexible boxes</a>
+     </article>
+    <article>
+         <a href="ustream.html" target="new">Unicode Stream</a> : 
+        A stream of Unicode characters
+    </article>    
+    <article> 
+        <a href="snap.html" target="new">Snap Example</a> : 
+        An example of an SVG animation using the library 
+        <a href="http://snapsvg.io/" target="new">SnapSVG</a>        
+     </article>
+    </section>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="544"
+   height="705"
+   id="flame"
+   version="1.1"
+   inkscape:version="0.48.4 r9939">
+  <g>
+    <path
+       style="fill:#800000;stroke-linecap:butt;stroke-linejoin:miter "
+       d="m 50,70 c 36.47884,79.7699 -50.57747,123.60514 -13.12943,134.8303 19.07538,84.39882 41.57753,1.84615 50.17858,74.0624 12.64148,63.8947 94.36373,9.96107 119.44703,-10.58513 18.53945,-28.26025 28.00126,-32.57984 29.10384,-63.39877 0.24262,-56.0894 -110.88613,-99.26346 -62.51384,-174.84841 -75.61557,20.11538 39.19727,206.11519 -23.14052,204.83226 -133.31155,-3.2487 11.53813,-170.3054 -99.94566,-164.89265 z"
+       id="path3907"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccc" />
+  </g>
+</svg>

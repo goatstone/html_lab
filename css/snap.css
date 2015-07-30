@@ -1,0 +1,29 @@
+body {
+    background: #222;
+    font-family: sans-serif;
+}
+
+svg#moon {
+    display: block;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+svg#spinner{
+    border-radius: 20px;
+    background-color: azure;
+}
+svg tspan:nth-child(1) {
+    /*fill: red;*/
+}
+
+svg.flame {
+    position: absolute;
+    left: 20%;
+    top:0px;
+    /*background-color: red;*/
+    display: none;
+}

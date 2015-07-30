@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<head>
+    <title>Tests timing of requestAnimationFrame</title>
+    <style>
+        #anim {
+            position:absolute;
+            left:0px;
+            width:150px;
+            height:150px;
+            background: blue;
+            font-size: larger;
+            color: white;
+            border-radius: 10px;
+            padding: 1em;
+        }
+
+        .composite {
+            -webkit-transform: translateZ(0);
+        }
+    </style>
+    <script src="/js/raftime.js"></script>
+</head>
+<body>
+<div class="controls">
+    <p>Avg delay between callbacks: <span id="avgdelay">undefined</span>
+    <p>Avg framerate: <span id="fps">undefined</span>
+    <p>Additional delay per callback: <span id="delay">0</span> milliseconds.
+    <p>Set delay: <input style="width:20em" type="range" min="0" max="100" step="1" value="0" id="delayinput">
+    <p>Request animation at <select id="baselect"><option>beginning</option><option>end</option></select> of animation loop.
+    <p>Compositing <select id="composite"><option>off</option><option>on</option></select>.
+    <p>Callbacks: <span id="counter"></span>
+    <div id="anim"></div>
+    <script>
+        var a = document.getElementById("anim");
+
+        if (!("requestAnimationFrame" in window)) {
+            if ("webkitRequestAnimationFrame" in window) {
+                window.requestAnimationFrame = window.webkitRequestAnimationFrame;
+            } else if ("mozRequestAnimationFrame" in window) {
+                window.requestAnimationFrame = window.mozRequestAnimationFrame;
+            } else {
+                if ("console" in window)
+                    console.log("no requestAnimationFrame found");
+            }
+        }
+
+        function busywait(millis) {
+            var start = Date.now();
+            while (Date.now() - start < millis) {}
+        }
+
+        var requestAtBeginning = true;
+
+        document.getElementById("delayinput").onchange = function() {
+            delayTime = this.value;
+            console.log("new delay time = " + delayTime);
+            document.getElementById("delay").textContent = delayTime;
+        };
+
+        document.getElementById("baselect").onchange = function() {
+            requestAtBeginning = this.selectedIndex == 0;
+        };
+
+        document.getElementById("composite").onchange = function() {
+            document.querySelector(".controls").classList.toggle("composite");
+        };
+
+        var delayTime = 0;
+        var startTime = Date.now();
+        var lastFireTime = undefined;
+
+        var callbacks = 0;
+
+        function callback() {
+            callbacks++;
+            document.getElementById("counter").innerHTML = "" + callbacks;
+            if (requestAtBeginning)
+                window.requestAnimationFrame(callback, a);
+            //if (time === undefined)
+            time = Date.now();
+
+            if (lastFireTime !== undefined)
+                callbackFired(time - lastFireTime);
+            lastFireTime = time;
+
+            if (delayTime)
+                busywait(delayTime);
+
+            a.style.left = ((time - startTime)/10 % 500) + "px";
+            if (!requestAtBeginning)
+                window.requestAnimationFrame(callback, a);
+        }
+
+        window.onload = function() {
+            window.requestAnimationFrame(callback, a);
+        };
+
+    </script>
+</body>
+</html>
+
