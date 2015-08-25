@@ -1,44 +1,98 @@
-
-.flex_layout_container {
+/* css/fles.css Jose Collas :  8.2015 */ 
+body{
+    text-align: center;
+}
+h3{
+    background-color: aqua;
+}
+/* nav */
+nav{
+    position: absolute;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #ccc;
+    align-items: center;
+    justify-content: space-between;
+}
+nav section{
+    background-color: red;    
+    margin: 20px;
+    padding: 7px;
+}
+/* content */
+section.content{
+    display: inline-flex;
+    flex-flow: column wrap;
     justify-content: flex-end;
     align-items: center;
-    border: 5px solid blue;
-    height: 300px;
+    min-width:300px;
+    margin-top: 45px;
+    background-color: hsla( 200, 50%, 60%, 1.0) ;
 }
-
-.flex_layout_container div {
-    flex: 1 1 20px;
-    background-color: green;
-    border: 5px solid red;
-    /*align-self: stretch;*/
-    max-width: 50px;
-    min-width: 30px;
-    transition: background-color 0.7s;
+section.content section{
+    padding: 2px;
+    margin: 5px 0 5px 0;
+    min-width: 300px;
 }
-
-
-.flex_layout_container div:nth-child(1) {
-    flex: 1 1 12px;
+/* button */
+section.content button{
+    color: hsla( 40, 50%, 100%, 1.0) ;
+    width: 300px;
+    height: 40px;
+    margin: 5px;
     align-self: center;
-    background-color: blue;
+    background-color: hsla( 150, 50%, 60%, 1.0);
 }
-
-.flex_layout_container div:nth-child(2) {
-    flex: 1 1 20px;
-    align-self: flex-start;
-    background-color: blueviolet;
+/* head */
+section.content section.head{
+    background-color: hsla( 250, 50%, 60%, 1.0) ;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
 }
-
-.flex_layout_container div:nth-child(4) {
-    flex: 2 2 12px;
-    align-self: flex-end;
-    background-color: azure;
+section.content section.head h1{
+    color: hsla( 140, 50%, 60%, 1.0) ;
+    background-color: hsla( 50, 50%, 60%, 0.3) ;
+    margin: 0;
 }
-.flex_layout_container div:hover {
-    transition: background-color 0.7s;
-    background-color: gold;
-    cursor: pointer;
+section.content section.head article{
+    color: hsla( 40, 50%, 90%, 1.0) ;
+    margin: 0;
+}
+/* item */
+section.content section.item{
+    flex: 1 3 1;
+    background-color: hsla( 110, 50%, 60%, 1.0) ;
+    color: hsla(180, 10%, 30%, 1);            
+}
+section.content section.items article {
+    background-color: hsla( 10, 50%, 50%, 1.0) ;
+    color: hsla(0, 10%, 90%, 1.0);            
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+/* info */
+section.content section.info{
+    background-color: hsla( 0, 90%, 70%, 1.0) ;
+}
+/* control */
+section.content section.control{
+    background-color: hsla( 50, 100%, 60%, 1.0) ;
+    align-self:   center;
+} 
+/* items */
+section.content section.items{
+    background-color: hsla( 250, 100%, 60%, 1.0) ;
+    display: flex;
+    flex-flow: row wrap;
+    width: 200px;
+}
+section.content section.items article{
+    background-color: red;
+    width: 125px;
+    margin: 6px;
 }
